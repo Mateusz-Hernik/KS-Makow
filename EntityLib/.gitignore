@@ -11,5 +11,11 @@ bld/
 [Oo]bj/
 
 # User-specific files
-*.csproj
+*.user
+*.suo
+*.[Cc]ache
+*.bak
+*.ncb
+*.log 
+*.DS_Store
 
