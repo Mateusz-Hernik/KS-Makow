@@ -1,0 +1,31 @@
+div#table-header {
+  background-color: rgb(27, 116, 182);
+  color: white;
+  border: 1px solid rgb(22, 97, 152);
+}
+
+div#table-header > div {
+  padding: 10px 0 10px 10px !important;
+}
+  
+div #table-header span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div#table-content,
+.even, .odd {
+  border: 1px solid rgb(214, 222, 224);
+}
+
+div#table-content div {
+  padding: 5px !important;
+}
+
+.even {
+  background-color: rgb(252, 254, 252);
+}
+
+.odd {
+  background-color: rgb(232, 237, 238);
+}

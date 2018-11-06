@@ -1,0 +1,11 @@
+<div *ngFor="let news of newses" class="news-container row" [routerLink]="['/news', news.id]">
+  <div class="news-header col-12 col-sm-12">
+    <span>{{news.title}}</span>
+  </div>
+  <div class="news-content col-12 col-sm-12">
+    <p>{{news.text}}</p>
+  </div>
+  <div class="news-footer col-12 col-sm-12">
+    <span>Author: {{news.author}} {{news.addDate | date:"dd-MM-yyyy HH:ss"}}</span>
+  </div>
+</div>

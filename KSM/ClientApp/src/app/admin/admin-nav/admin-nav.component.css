@@ -1,0 +1,29 @@
+.navbar li > a {
+  color: white;
+}
+
+  .navbar li > a:hover,
+  .navbar li > a:focus {
+    color: rgb(27, 116, 182);
+  }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar li {
+    font-size: 1.1rem;
+    margin: 0.4rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar li {
+    font-size: 1.4rem;
+    margin: 0.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar li {
+    font-size: 1.6rem;
+    margin: 0.9rem;
+  }
+}

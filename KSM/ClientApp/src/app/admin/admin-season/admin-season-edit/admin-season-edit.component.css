@@ -1,0 +1,19 @@
+div.season-edit-container {
+  padding: 25px !important;
+}
+
+.is-invalid {
+  border: 1px solid red !important;
+  border-left: 5px solid red !important;
+  border-radius: 5px !important;
+}
+
+.form-control-feedback > p {
+  margin-top: 2px;
+  text-align: left;
+  color: red;
+}
+
+div.alert {
+  margin-top: 20px;
+}

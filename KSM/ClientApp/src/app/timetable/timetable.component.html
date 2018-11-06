@@ -1,0 +1,15 @@
+<ksm-nav-menu></ksm-nav-menu>
+
+<div *ngIf="newestSeason?.id > 0" class="container-fluid" id="timetable-container">
+  <p>Kolejki sezonu {{newestSeason.name}}</p>
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let queue of queues">
+        <td>{{queue.id}}</td>
+        <td>{{queue.number}}</td>
+        <td>{{queue.startDate | date:"dd-MM-yyyy"}}</td>
+        <td>{{queue.endDate | date:"dd-MM-yyyy"}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

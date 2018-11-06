@@ -1,0 +1,33 @@
+<ksm-admin-nav></ksm-admin-nav>
+<div class="season-edit-container">
+  <div *ngIf="isAlertDisplayed" class="alert alert-success" role="alert">
+    Obiekt został zmodyfikowany i zapisany do bazy danych !
+  </div>
+  <form [formGroup]="seasonForm">
+    <div class="form-group">
+      <label for="name">Nazwa</label>
+      <input type="text" [(ngModel)]="season.name" formControlName="name" class="form-control" id="name" placeholder="Nazwa sezonu" [ngClass]="{ 'is-invalid': (name.invalid && name.touched) }">
+      <div class="form-control-feedback" *ngIf="name.invalid && name.touched">
+        <p *ngIf="name.errors?.required">Pole jest wymagane!</p>
+        <p *ngIf="name.errors?.minlength">Pole powinno zawierać minimum 10 znaków!</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="startDate">Data rozpoczęcia</label>
+      <input type="date" [ngModel]="season.startDate | date:'yyyy-MM-dd'" (ngModelChange)="season.startDate = $event" formControlName="startDate" class="form-control" id="startDate" placeholder="Data rozpoczęcia" [ngClass]="{ 'is-invalid': (startDate.value && endDate.value && startDate.value > endDate.value) }">
+      <div class="form-control-feedback" *ngIf="startDate.value && endDate.value">
+        <p *ngIf="startDate.value > endDate.value">Data rozpoczęcia musi być mniejsza od daty zakończenia!</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="endDate">Data zakończenia</label>
+      <input type="date" [ngModel]="season.endDate | date:'yyyy-MM-dd'" (ngModelChange)="season.endDate = $event" formControlName="endDate" class="form-control" id="endDate" placeholder="Data zakończenia" [ngClass]="{ 'is-invalid': (startDate.value && endDate.value && startDate.value > endDate.value) }">
+      <div class="form-control-feedback" *ngIf="startDate.value && endDate.value">
+        <p *ngIf="startDate.value > endDate.value">Data zakończenia musi być większa od daty rozpoczęcia!</p>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [routerLink]='["/admin/season"]' (click)="updateSeason()">Zapisz</button>
+    <button class="btn btn-primary" [routerLink]='["/admin/season"]'>Cofnij</button>
+  </form>
+</div>
+

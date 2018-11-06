@@ -1,0 +1,33 @@
+div.news-container {
+  margin-bottom: 20px;
+}
+
+div.news-header {
+  background-color: rgb(27, 116, 182);
+  color: white;
+  padding: 10px !important;
+  border: 1px solid rgb(22, 97, 152);
+}
+
+div.news-content {
+  border-left: 1px solid rgb(214, 222, 224);
+  border-right: 1px solid rgb(214, 222, 224);
+}
+
+.news-container:hover {
+  cursor: pointer;
+}
+
+.news-container:hover .news-header {
+  background-color: rgb(22, 97, 152);
+}
+
+div.news-content,
+div.news-footer {
+  padding: 5px !important;
+}
+
+div.news-footer {
+  background-color: rgb(232, 237, 238);
+  border: 1px solid rgb(214, 222, 224);
+}

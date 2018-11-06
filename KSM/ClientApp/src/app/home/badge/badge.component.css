@@ -1,0 +1,35 @@
+div.badge-header {
+  background-color: rgb(27, 116, 182);
+  color: white;
+  height: 40px;
+}
+
+.next-match,
+.previous-match {
+  font-size: 16px;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next-match:hover,
+.previous-match:hover {
+  cursor: pointer;
+  background-color: rgb(22, 97, 152);
+}
+
+.next-match {
+  border: 1px solid rgb(22, 97, 152);
+}
+
+.previous-match {
+  border-top: 1px solid rgb(22, 97, 152);
+  border-right: 1px solid rgb(22, 97, 152);
+  border-bottom: 1px solid rgb(22, 97, 152);
+}
+
+.news-content {
+  text-align: center;
+  border: 1px solid rgb(214, 222, 224);
+}

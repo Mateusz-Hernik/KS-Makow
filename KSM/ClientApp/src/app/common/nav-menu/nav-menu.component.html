@@ -1,0 +1,42 @@
+<nav class='navbar navbar-expand-md navbar-light bg-dark sticky-top'>
+  <a class="navbar-brand" [routerLink]='["/"]'>
+    <img alt="KS Maków" src="/assets/images/ksm_logo_90.png" class="d-inline-block align-top">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class='navbar-collapse collapse justify-content-between align-items-center w-100' id="navbarNav">
+    <ul class='navbar-nav mx-auto text-center'>
+      <li class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+        <a class="nav-link" [routerLink]='["/"]'>
+          <span>Strona główna</span>
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]='["link-active"]'>
+        <a class="nav-link" [routerLink]='["/terminarz"]'>
+          <span>Terminarz</span>
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]='["link-active"]'>
+        <a class="nav-link" [routerLink]='["/fetch-data"]'>
+          <span>Zawodnicy</span>
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]='["link-active"]'>
+        <a class="nav-link" [routerLink]='["/fetch-data"]'>
+          <span>Newsy</span>
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]='["link-active"]'>
+        <a class="nav-link" [routerLink]='["/fetch-data"]'>
+          <span>Galeria</span>
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]='["link-active"]'>
+        <a class="nav-link" [routerLink]='["/fetch-data"]'>
+          <span>Kontakt</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

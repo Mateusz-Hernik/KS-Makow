@@ -1,0 +1,13 @@
+#home-container {
+  margin: 35px 25px !important;
+}
+
+@media (min-width: 768px) {
+  #home-right-col {
+    padding-left: 15px !important;
+  }
+
+  #home-left-col {
+    padding-right: 15px !important;
+  }
+}

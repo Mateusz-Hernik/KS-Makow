@@ -1,0 +1,56 @@
+<div id="result-table" class="container-fluid">
+  <div id="table-header" class="row">
+      <div class="col-1 col-sm-1">
+        <span>LP</span>
+      </div>
+      <div class="col-6 col-sm-6" style="text-align: center">
+        <span>DRUŻYNA</span>
+      </div>
+      <div class="col-1 col-sm-1">
+        <span>M</span>
+      </div>
+      <div class="col-1 col-sm-1">
+        <span>Z</span>
+      </div>
+      <div class="col-1 col-sm-1">
+        <span>R</span>
+      </div>
+      <div class="col-1 col-sm-1">
+        <span>P</span>
+      </div>
+      <div class="col-1 col-sm-1">
+        <span>PKT</span>
+      </div>
+  </div>
+  <div id="table-content" class="container-fluid">
+    <div class="row" *ngFor="let team of teams; let odd = odd; let even = even" [ngClass]="{ odd: odd, even: even}">
+      <div class="col-1 col-sm-1">
+        <b>{{team.position}}.</b>
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.image}}
+      </div>
+      <div class="col-4 col-sm-4">
+        {{team.name}}
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.positionChange}}
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.matchCount}}
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.winCount}}
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.drawCount}}
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.loseCount}}
+      </div>
+      <div class="col-1 col-sm-1">
+        {{team.totalPoints}}
+      </div>
+    </div>
+  </div>
+</div>

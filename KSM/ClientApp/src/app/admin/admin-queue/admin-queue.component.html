@@ -1,0 +1,76 @@
+<ksm-admin-nav></ksm-admin-nav>
+<div class="container-fluid" id="queues-container">
+  <h2>Kolejki</h2>
+  <p>Zarządzanie kolejkami - przeglad, edycja</p>
+
+  <ul class="nav nav-tabs" id="myQueues" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#queuesList" role="tab" aria-controls="queuesList" aria-selected="true">Lista kolejek</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#addQueue" role="tab" aria-controls="addQueue" aria-selected="false">Dodaj kolejkę</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="queuesList" role="tabpanel" aria-labelledby="home-tab">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Numer</th>
+            <th>Sezon</th>
+            <th>Data rozpoczęcia</th>
+            <th>Data zakończenia</th>
+            <th>Akcje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let queue of queues | async">
+            <td>{{queue.id}}</td>
+            <td>{{queue.number}}</td>
+            <td>{{queue.seasonName}}</td>
+            <td>{{queue.startDate | date:"dd-MM-yyyy"}}</td>
+            <td>{{queue.endDate | date:"dd-MM-yyyy"}}</td>
+            <td>
+              <button type="button" class="btn btn-outline-primary btn-sm">Podgląd</button>
+              <button type="button" class="btn btn-outline-info btn-sm" [routerLink]='["/admin/queue", queue.id]'>Edycja</button>
+              <button type="button" class="btn btn-outline-danger btn-sm" [routerLink]='["/admin/queue"]'>Usuń</button> <!--(click)="deleteSeason(season.id)"-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--<div class="tab-pane" id="addQueue" role="tabpanel" aria-labelledby="profile-tab">
+      <div *ngIf="isAlertDisplayed" class="alert alert-success" role="alert">
+        Obiekt został dodany do bazy danych !
+      </div>
+      <form [formGroup]="seasonForm">
+        <div class="form-group">
+          <label for="name">Nazwa</label>
+          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Nazwa sezonu" [ngClass]="{ 'is-invalid': (name.invalid && name.touched) }">
+          <div class="form-control-feedback" *ngIf="name.invalid && name.touched">
+            <p *ngIf="name.errors?.required">Pole jest wymagane!</p>
+            <p *ngIf="name.errors?.minlength">Pole powinno zawierać minimum 10 znaków!</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="startDate">Data rozpoczęcia</label>
+          <input type="date" formControlName="startDate" class="form-control" id="startDate" placeholder="Data rozpoczęcia" [ngClass]="{ 'is-invalid': (startDate.value && endDate.value && startDate.value > endDate.value) }">
+          <div class="form-control-feedback" *ngIf="startDate.value && endDate.value">
+            <p *ngIf="startDate.value > endDate.value">Data rozpoczęcia musi być mniejsza od daty zakończenia!</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="endDate">Data zakończenia</label>
+          <input type="date" formControlName="endDate" class="form-control" id="endDate" placeholder="Data zakończenia" [ngClass]="{ 'is-invalid': (startDate.value && endDate.value && startDate.value > endDate.value) }">
+          <div class="form-control-feedback" *ngIf="startDate.value && endDate.value">
+            <p *ngIf="startDate.value > endDate.value">Data zakończenia musi być większa od daty rozpoczęcia!</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [ngClass]="{ 'is-btn-disabled': (startDate.value && endDate.value && startDate.value > endDate.value) }" [routerLink]='["/admin/season"]' (click)="saveSeason()">Dodaj</button>
+      </form>
+    </div>-->
+  </div>
+</div>

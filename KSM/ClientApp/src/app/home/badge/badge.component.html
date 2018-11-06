@@ -1,0 +1,20 @@
+<div id="badge-container" class="container-fluid">
+  <div class="badge-header row">
+    <div class="next-match col-6 col-sm-6" (click)="setNextMatchActive()">
+      Następny mecz
+    </div>
+    <div class="previous-match col-6 col-sm-6" (click)="setPreviousMatchActive()">
+      Poprzedni mecz
+    </div>
+  </div>
+  <div class="news-content row">
+    <div *ngIf="isNextMatchActive" class="col-12 col-sm-12">
+      <p>
+        B Klasa<br />{{nextMatch.team1}} vs {{nextMatch.team2}}<br />{{nextMatch.startTime | date:'dd-MM-yyyy HH:ss'}}
+      </p>
+    </div>
+    <div *ngIf="!isNextMatchActive" class="col-12 col-sm-12">
+      <p>Poprzedni mecz</p>
+    </div>
+  </div>
+</div>
